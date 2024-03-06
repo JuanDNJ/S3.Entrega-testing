@@ -16,12 +16,15 @@ function getMoviesFromDirector(array, director) {
 function moviesAverageOfDirector(array, director) {
   const moviesDirector = array.filter(item => item.director === director);
   const result = moviesDirector.reduce((sum, movie) => sum + movie.score / moviesDirector.length, 0);
+   // console.log("EXERCICE 3 ->", result);
   return result;
 }
 
 // Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
-  
+  const result = array.map(item => item.title).sort().slice(0,20);
+  // console.log("EXERCICE 4 ->", result);
+  return result
 }
 
 // Exercise 5: Order by year, ascending
