@@ -76,7 +76,17 @@ function hoursToMinutes(array) {
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {}
+function bestFilmOfYear(array, year) {
+  const result = array.map(movie => movie.year === year  && movie).filter(movie => movie !== false);
+
+  const average = result.reduce(
+    (sum, movie) => sum + movie.score / result.length,
+    0
+  );
+  const bestMovie = result.filter(movie => movie.score > average)
+  //  console.log('EXERCICE 8 ->', result, bestMovie);
+  return bestMovie;
+}
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
